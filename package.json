@@ -1,0 +1,38 @@
+{
+  "name": "lindbergh-loader-gui",
+  "version": "1.0.0",
+  "description": "A GUI for Lindbergh loader.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rolel/lindbergh-loader-gui.git"
+  },
+  "keywords": [
+    "lindbergh",
+    "loader",
+    "multi"
+  ],
+  "author": "Rolel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rolel/lindbergh-loader-gui/issues"
+  },
+  "homepage": "https://github.com/Rolel/lindbergh-loader-gui#readme",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0"
+  }
+}
