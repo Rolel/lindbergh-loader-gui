@@ -1,0 +1,343 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Console", Courier, monospace;
+    cursor: crosshair;
+}
+
+.glow {
+    box-shadow: 0px 0px 6px 2px rgba(255,255,255,0.9);
+    border-radius: 2%;
+}
+.darken {
+    background: rgba(0,0,0,0.7)
+}
+.flipster--coverflow .flipster__container {
+    padding-bottom: 0;
+}
+.flipster__button {
+    color: white;
+    opacity: 1;
+    padding: 0 2%;
+    cursor: crosshair;
+}
+.flipster--click .flipster__item--past, .flipster--click .flipster__item--future {
+    cursor: crosshair;
+}
+.flipster__button:hover {
+    color: red;
+}
+.flipster__item  {
+    opacity: 0.8;
+}
+.flipster__item--current {
+    opacity: 1;
+}
+
+#settings {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    bottom: 10%;
+    background: white;
+    display: none;
+}
+#settings .title {
+    width: 100%;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    margin: 1% auto;
+}
+#settings .infos {
+    position: absolute;
+    bottom: 1%;
+    width: 100%;
+    text-align: center;
+}
+#settings fieldset {
+    border: none;
+    width: 80%;
+    margin: 2% auto 0;
+}
+#settings fieldset input,
+#settings fieldset select {
+    float: right;
+    clear: right;
+    margin: 4px;
+}
+#settings fieldset span {
+    float: right;
+    margin: 4px;
+}
+#settings fieldset.active {
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, yellow 0%, yellow 25%, yellow 51%, #ff357f 100%);
+    -webkit-animation: AnimateBG 15s ease infinite;
+    animation: AnimateBG 15s ease infinite;
+}
+
+.autostart-enabled .autostart-disabled-block,
+.autostart-paused .autostart-enabled-block,
+.autostart-enabled-block,
+.autostart-paused-block {
+    display: none;
+}
+.autostart-enabled .autostart-enabled-block {
+    display: block;
+}
+.autostart-paused .autostart-enabled-block {
+    display: none;
+}
+.autostart-paused .autostart-paused-block {
+    display: block;
+}
+
+
+
+#instructions-wrapper {
+    position: absolute;
+    top: 0;
+    right: 3%;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+#preview-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#game-wrapper {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    right: 3%;
+    bottom: 30%;
+}
+#selector-wrapper {
+    position: absolute;
+    bottom: 3%;
+    right: 0;
+    left: 0;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.7)
+}
+
+#screen {
+    width: 640px;
+    height: 480px;
+    position: relative;
+    margin: auto;
+    height: 100vh;
+    width: calc((4/3)*100vh);
+    background-color: black;
+    background-size: cover;
+}
+#screen.ratio169 {
+    width: calc((16/9)*100vh);
+}
+#preview {
+    overflow: hidden;
+    width: 95%;
+}
+
+#multiinstructions {
+    width: 100%;
+    background: white;
+    margin-bottom: 10%;
+    padding: 1%;
+}
+
+#gameinstructions {
+    width: 100%;
+    background: white;
+    padding: 1%;
+}
+ul.infos {
+    padding: 0;
+}
+ul.infos li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+ul.infos li span {
+    width: 40%;
+    display: block;
+    float: left;
+}
+.gamename {
+    display: block;
+    text-align: center;
+}
+
+#selector {
+    width: 100%;
+}
+#selector::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.game {
+    height: 20%;
+    /*
+    background: rgba(255,255,255,0.7);
+    border: 1px dashed darkgray; */
+    text-align: center;
+}
+.game span {
+    text-align: center;
+}
+
+.video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*
+#selector > .game { display: none; }
+
+#selector .previous, #selector .next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 5em;
+    border: 1px solid black;
+    background: green;
+    z-index: 100;
+    cursor: crosshair;
+    text-align: center;
+}
+#selector .next {
+    top: auto;
+    bottom: 0;
+}
+#selector .item {
+    border: 1px dashed black;
+    width: 100%;
+    min-height: 2em;
+    background: darkgrey;
+    cursor: crosshair;
+    position: absolute;
+}
+
+#selector .item.active {
+    background: red;
+}
+#selector img {
+  width: 100%;
+}
+
+*/
+
+
+#debug {
+ border: 1px dashed black;
+ position: absolute;
+ bottom: 5px;
+ right: 5px;
+ width: 200px;
+    display: none;
+}
+
+
+
+
+
+@-webkit-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+@-moz-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+@-o-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+@keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+@-webkit-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+}
+@-moz-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+}
+@-o-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+}
+@keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+}
+/* Main styles */
+#settings {
+    /* img size is 50x50 */
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+    -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+    /* Safari 4+ */
+    -moz-animation: bg-scrolling-reverse 0.92s infinite;
+    /* Fx 5+ */
+    -o-animation: bg-scrolling-reverse 0.92s infinite;
+    /* Opera 12+ */
+    animation: bg-scrolling-reverse 0.92s infinite;
+    /* IE 10+ */
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

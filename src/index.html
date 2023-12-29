@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; script-src 'self'">
+    <title>Lindbergh Loader GUI</title>
+    <link rel="stylesheet" href="../libs/flipster/jquery.flipster.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="../libs/jquery/jquery.js"></script>
+    <script src="../libs/flipster/jquery.flipster.min.js"></script>
+    <script src="renderer.js"></script>
+  </head>
+  <body>
+  <div id="screen">
+    <div id="game-wrapper" class="glow darken">
+      <div id="instructions-wrapper">
+        <div id="multiinstructions" class="glow">
+          <ul class="infos">
+            <li><span>MOVE</span>Stick/Gun/Wheel</li>
+            <li><span>SELECT</span>Start/A/Trigger/Accel</li>
+            <li><span>BACK</span>B/Action/Brake</li>
+          </ul>
+          <div class="autostart-infos">
+            <div class="autostart-disabled-block">
+              Autostart is disabled.<br />
+              Press Back to access settings.
+            </div>
+            <div class="autostart-enabled-block">
+              Autostart in <span class="autostart-value"></span>sec.<br />
+              <b>Use BACK to disable autostart.</b><br />
+              Press Back to access settings.
+            </div>
+            <div class="autostart-paused-block">
+              Autostart is enabled, but paused.<br />
+              Press Back to access settings.
+            </div>
+          </div>
+        </div>
+
+        <div id="gameinstructions" class="glow">
+          <div class="gamename">Virtua Fighter 5</div>
+          <ul class="infos">
+            <li><span>Genre</span>Fighting</li>
+            <li><span>Year</span>2015</li>
+            <li><span>Editor</span>SEGA</li>
+            <li><span>Players</span>1-2</li>
+            <li><span>Controls</span>ABCD</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="preview-wrapper">
+        <div id="preview" class="glow">
+            Current value: <strong id="counter">0</strong>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="selector-wrapper">
+      <div id="selector">
+        <div class="container">
+        </div>
+      </div>
+    </div>
+
+    <div id="settings" class="glow">
+      <div class="title">Settings</div>
+      <div class="infos">Settings are saved automatically.<br />Use SELECT to change settings. Use BACK to exit.</div>
+      <form id="choices">
+        <fieldset>
+          <label>Autostart last played game</label>
+          <input type="checkbox" name="autostart" data-checked-value="1" data-unchecked-value="0" />
+        </fieldset>
+        <fieldset>
+          <label>Autostart wait duration</label>
+          <input type="checkbox" name="autostartwait" data-checked-value="10" /> <span>10sec</span>
+          <input type="checkbox" name="autostartwait" data-checked-value="30" /> <span>30sec</span>
+          <input type="checkbox" name="autostartwait" data-checked-value="60" /> <span>60sec</span>
+        </fieldset>
+        <fieldset>
+          <label>Menu screen ratio</label>
+          <input type="checkbox" name="ratio" data-checked-value="169" /> <span>16:9</span>
+          <input type="checkbox" name="ratio" data-checked-value="43" /> <span>4:3</span>
+        </fieldset>
+      </form>
+
+      Node.js <span id="node-version"></span>, Chromium <span id="chrome-version"></span>, and Electron <span id="electron-version"></span>
+    </div>
+  </div>
+  </body>
+</html>
