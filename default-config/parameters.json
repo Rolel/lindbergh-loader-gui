@@ -1,0 +1,121 @@
+{
+  "games": {
+    "2spicy": {
+      "name": "2 Spicy",
+      "logo": "/lindbergh-loader-gui/medias/Sega Lindbergh/Game Clear logos/2 Spicy.png",
+      "background": "/lindbergh-loader-gui/medias/Sega Lindbergh/Fanart-Background/2 Spicy.jpg",
+      "video": "/lindbergh-loader-gui/medias/Sega Lindbergh/Video Themes/2 Spicy.mp4",
+      "command": "xeyes",
+      "args": ["-center", "yellow"],
+      "category": "Shooting",
+      "infos": {
+        "Genre": "Shooting",
+        "Year": "2007",
+        "Developer": "Sega AM1",
+        "Players": "1-2"
+      }
+    },
+    "abc": {
+      "name": "Afterburner Climax",
+      "logo": "/lindbergh-loader-gui/medias/Sega Lindbergh/Game Clear logos/Afterburner Climax.png",
+      "background": "/lindbergh-loader-gui/medias/Sega Lindbergh/Fanart-Background/Afterburner Climax.jpg",
+      "video": "/lindbergh-loader-gui/medias/Sega Lindbergh/Video Themes/Afterburner Climax.mp4",
+      "command": "xeyes",
+      "args": ["-center", "blue"],
+      "category": "Flight",
+      "infos": {
+        "Genre": "Flight",
+        "Year": "2006",
+        "Developer": "Sega AM2",
+        "Players": "1 (2 link)"
+      }
+    },
+    "hotd4": {
+      "name": "House Of The Dead 4",
+      "logo": "/lindbergh-loader-gui/medias/Sega Lindbergh/Game Clear logos/House of the Dead 4.png",
+      "background": "/lindbergh-loader-gui/medias/Sega Lindbergh/Fanart-Background/HOTD4.jpg",
+      "video": "/lindbergh-loader-gui/medias/Sega Lindbergh/Video Themes/House of the Dead 4.mp4",
+      "command": "xeyes",
+      "args": ["-center", "orange"],
+      "category": "Shooting",
+      "infos": {
+        "Genre": "Shooting",
+        "Year": "2005",
+        "Developer": "Sega AM1",
+        "Players": "1-2"
+      }
+    },
+    "vt3": {
+      "name": "Virtua Tennis 3",
+      "logo": "/lindbergh-loader-gui/medias/Sega Lindbergh/Game Clear logos/Virtua Tennis 3.png",
+      "background": "/lindbergh-loader-gui/medias/Sega Lindbergh/Fanart-Background/Virtua Tennis 3.jpg",
+      "video": "/lindbergh-loader-gui/medias/Sega Lindbergh/Video Themes/Virtua Tennis 3.mp4",
+      "command": "xeyes",
+      "args": ["-center", "yellow"],
+      "category": "Sport",
+      "infos": {
+        "Genre": "Sport",
+        "Year": "2006",
+        "Developer": "Sega",
+        "Players": "1-2"
+      }
+    },
+    "vf5": {
+      "name": "Virtua Fighter 5",
+      "logo": "/lindbergh-loader-gui/medias/Sega Lindbergh/Game Clear logos/Virtua Fighter 5.png",
+      "background": "/lindbergh-loader-gui/medias/Sega Lindbergh/Fanart-Background/Virtua Fighter 5.jpg",
+      "video": "/lindbergh-loader-gui/medias/Sega Lindbergh/Video Themes/Virtua Fighter 5.mp4",
+      "command": "xeyes",
+      "args": ["-center", "blue"],
+      "category": "Fighting",
+      "infos": {
+        "Genre": "Fighting",
+        "Year": "2005",
+        "Developer": "Sega AM2",
+        "Players": "1-2"
+      }
+    },
+    "vf5r": {
+      "name": "Virtua Fighter 5 R",
+      "logo": "/lindbergh-loader-gui/medias/Sega Lindbergh/Game Clear logos/Virtua Fighter 5.png",
+      "background": "/lindbergh-loader-gui/medias/Sega Lindbergh/Fanart-Background/Virtua Fighter 5.jpg",
+      "video": "/lindbergh-loader-gui/medias/Sega Lindbergh/Video Themes/Virtua Fighter 5.mp4",
+      "command": "xeyes",
+      "args": ["-center", "green"],
+      "category": "Fighting",
+      "infos": {
+        "Genre": "Fighting",
+        "Year": "2008",
+        "Developer": "Sega AM2",
+        "Players": "1-2"
+      }
+    },
+    "vf5final": {
+      "name": "Virtua Fighter 5: Final Showdown",
+      "logo": "/lindbergh-loader-gui/medias/Sega Lindbergh/Game Clear logos/Virtua Fighter 5.png",
+      "background": "/lindbergh-loader-gui/medias/Sega Lindbergh/Fanart-Background/Virtua Fighter 5.jpg",
+      "video": "/lindbergh-loader-gui/medias/Sega Lindbergh/Video Themes/Virtua Fighter 5.mp4",
+      "command": "xeyes",
+      "args": ["-center", "red"],
+      "category": "Fighting",
+      "infos": {
+        "Genre": "Fighting",
+        "Year": "2010",
+        "Developer": "Sega AM2",
+        "Players": "1-2"
+      }
+    }
+  },
+  "config": {
+    "settingsFileAbsPath": "/lindbergh-loader-gui/lindysettings.json",
+    "inputDeadZone": 0.2,
+    "inputFastZone": 0.9,
+    "inputWait": 250
+  },
+  "defaultSettings" : {
+    "lastGame": "",
+    "autostart": 0,
+    "ratio": 43,
+    "autostartwait": 60
+  }
+}
