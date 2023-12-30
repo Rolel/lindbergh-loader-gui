@@ -12,6 +12,10 @@ window.onload = () => {
       jQuery("#selector").on("click",".flipster__item--current", function() {
             startGame(jQuery( this ).data("loaderGameId"));
       })
+
+      jQuery("body").on("click","a[href='#settings']", function() {
+            toggleSettings();
+      })
 }
 
 window.electronAPI.onSetConfig((value) => {
@@ -171,6 +175,7 @@ function scanGamepad () {
                   // console.log(gamepad.axes, gamepad.buttons)
                   if (gamepad.axes[0] > config.inputDeadZone) {
                         inputWaitStart();
+                        pauseAutoStart();
                         selector.flipster('prev');
                         console.log('go right')
                         if (gamepad.axes[0] > config.inputFastZone) {
@@ -180,6 +185,7 @@ function scanGamepad () {
                   }
                   if (gamepad.axes[0] < (-1 * config.inputDeadZone)) {
                         inputWaitStart();
+                        pauseAutoStart();
                         selector.flipster('next');
                         console.log('go left')
                         if (gamepad.axes[0] < (-1 * config.inputFastZone)) {
@@ -190,12 +196,13 @@ function scanGamepad () {
 
                   if (gamepad.buttons[0].pressed) {
                         inputWaitStart();
+                        pauseAutoStart();
                         startGame(jQuery("#selector .flipster__item--current").data("loaderGameId"));
                   }
                   if (gamepad.buttons[1].pressed) {
                         inputWaitStart();
-                        pauseAutostart = true;
-                        jQuery("#settings").fadeIn();
+                        pauseAutoStart();
+                        toggleSettings();
                   }
                   if (gamepad.buttons[2].pressed) { console.log('button C pressed') }
                   if (gamepad.buttons[3].pressed) { console.log('button D pressed') }
@@ -248,7 +255,7 @@ function scanGamepad () {
                   if (gamepad.buttons[1].pressed) {
                         inputWaitStart();
                         saveSettings();
-                        jQuery("#settings").fadeOut();
+                        toggleSettings();
                   }
             }
 
@@ -320,3 +327,15 @@ function autostart(second, gameId) {
       }
 }
 
+function pauseAutoStart() {
+      // We redraw settings panel if autostart get paused
+      if (!pauseAutostart) {
+            pauseAutostart = true;
+            applySettings(settings);
+      }
+}
+
+function toggleSettings() {
+      pauseAutoStart();
+      jQuery("#settings").fadeToggle();
+}
