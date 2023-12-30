@@ -78,6 +78,20 @@ body {
     animation: AnimateBG 15s ease infinite;
 }
 
+@counter-style repeating-emoji {
+    system: cyclic;
+    symbols: "🖥️" "🖥️" "🕹️️" "🧩"; // unicode code point
+    // CPU MEMORY GPU VERSIONS
+    suffix: " ";
+}
+
+#sysinfos ul {
+    margin-left: 5%;
+}
+#sysinfos li {
+    list-style-type: repeating-emoji;
+}
+
 .autostart-enabled .autostart-disabled-block,
 .autostart-paused .autostart-enabled-block,
 .autostart-enabled-block,
@@ -209,56 +223,6 @@ ul.infos li span {
     height: 100%;
     object-fit: cover;
 }
-/*
-#selector > .game { display: none; }
-
-#selector .previous, #selector .next {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30%;
-    height: 5em;
-    border: 1px solid black;
-    background: green;
-    z-index: 100;
-    cursor: crosshair;
-    text-align: center;
-}
-#selector .next {
-    top: auto;
-    bottom: 0;
-}
-#selector .item {
-    border: 1px dashed black;
-    width: 100%;
-    min-height: 2em;
-    background: darkgrey;
-    cursor: crosshair;
-    position: absolute;
-}
-
-#selector .item.active {
-    background: red;
-}
-#selector img {
-  width: 100%;
-}
-
-*/
-
-
-#debug {
- border: 1px dashed black;
- position: absolute;
- bottom: 5px;
- right: 5px;
- width: 200px;
-    display: none;
-}
-
-
-
-
 
 @-webkit-keyframes bg-scrolling-reverse {
     100% {
@@ -341,3 +305,7 @@ ul.infos li span {
         background-position: 0% 50%;
     }
 }
+
+
+
+

@@ -24,7 +24,7 @@ const createWindow = () => {
       kiosk: !devMode,
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
-        nodeIntegration: false, // Security best practice
+        nodeIntegration: true, // Needed to get system information
         contextIsolation: true, // Security best practice
         devTools: devMode
       }
