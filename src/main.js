@@ -1,7 +1,7 @@
-const { app, BrowserWindow, Menu, ipcMain } = require('electron/main')
+const { app, BrowserWindow, ipcMain } = require('electron/main')
 const fs = require('node:fs')
 const path = require('node:path')
-const { spawn, exec } = require('node:child_process');
+const { spawn } = require('node:child_process');
 
 let win; // Global ref for future usages
 let devMode = !(app.isPackaged)
