@@ -290,24 +290,31 @@ function gameChanged(currentItem, previousItem) {
 }
 
 function displayGame(gameId) {
-      // Inject video
-      let videoPlayer = "<video autoplay loop muted width=\"100%\" height=\"100%\">\n" +
-          "<source src=\"" + gameList[gameId].video + "\" type=\"video/mp4\"></video>"
+      const game = gameList[gameId];
+      if (!game) {
+            console.error(`Game with ID ${gameId} not found.`);
+            return;
+      }
+
+      // Use template literals for cleaner string concatenation
+      const muted = settings.videosound !== 1 ? 'muted' : '';
+      const videoPlayer = `<video autoplay loop ${muted} width="100%" height="100%">
+        <source src="${game.video}" type="video/mp4"></video>`;
       jQuery('#preview').html(videoPlayer);
 
-      // Set background
-      jQuery('#screen').css("background", "url(\"" + gameList[gameId].background + "\")");
+      // Set background using CSS shorthand
+      jQuery('#screen').css('background-image', `url("${game.background}")`);
 
-      // Set gameinfos
-      jQuery('#gameinstructions .infos li').remove();
-      Object.entries(gameList[gameId]["infos"]).forEach(([key, value]) => {
-            let item = "<li><span>" + key + "</span>" + value + "</li>";
-            jQuery('#gameinstructions .infos').append(item);
-      })
+      // Construct game information HTML in one go to reduce DOM manipulations
+      const gameInfoHtml = Object.entries(game.infos)
+          .map(([key, value]) => `<li><span>${key}</span>${value}</li>`)
+          .join('');
+      jQuery('#gameinstructions .infos').html(gameInfoHtml);
 
       // Set game name
-      jQuery('.gamename').text(gameList[gameId].name);
+      jQuery('.gamename').text(game.name);
 }
+
 
 function startGame(gameId) {
       console.log('Starting game ' + gameId);
