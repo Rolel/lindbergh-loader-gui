@@ -4,6 +4,7 @@ const path = require('node:path')
 const { spawn, exec } = require('node:child_process');
 
 let win; // Global ref for future usages
+let devMode = !(app.isPackaged)
 
 const commandLineArgs = interpretCommandLineArgs();
 
@@ -19,13 +20,13 @@ const createWindow = () => {
       width: 1024,
       height: 768,
       menuBarVisible: false,
-      fullscreen: false, // App will go fullscree when packaged
-      kiosk: false,
+      fullscreen: !devMode, // App will go fullscreen when packaged
+      kiosk: !devMode,
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: false, // Security best practice
         contextIsolation: true, // Security best practice
-        devTools: true
+        devTools: devMode
       }
     });
 
@@ -37,6 +38,9 @@ const createWindow = () => {
       if (parameters && parameters.games && parameters.config) {
         win.webContents.send('update-gamelist', parameters.games);
         win.webContents.send('set-config', parameters.config);
+        if (!devMode) {
+          win.setFullScreen(true);
+        }
       }
 
       // Load the settings
@@ -80,7 +84,7 @@ app.whenReady().then(() => {
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
     // Switch to full screen when app is packaged
-    if (app.isPackaged) {
+    if (!devmode) {
       win.setFullScreen(true);
     }
   })
