@@ -49,6 +49,7 @@ function applySettings(settings) {
           });
       if (settings['ratio'] == '169') { jQuery("#screen").addClass('ratio169') }
       if (settings['ratio'] == '43') { jQuery("#screen").removeClass('ratio169') }
+      if (settings['darkmode'] == '1') { jQuery("#screen").addClass('darkmode') } else { jQuery("#screen").removeClass('darkmode') }
 
       jQuery(".autostart-infos").removeClass('autostart-paused autostart-enabled');
       if (Number(settings['autostart']) == 1) {
@@ -249,7 +250,7 @@ function scanGamepad () {
                                     jQuery(first).each(function() { this.checked = true; });
                               }
                         }
-
+                        saveSettings();
 
                   }
                   if (gamepad.buttons[1].pressed) {

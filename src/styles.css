@@ -281,6 +281,10 @@ ul.infos li span {
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
 }
+.darkmode #settings {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
 
 @-webkit-keyframes AnimateBG {
     0% {
