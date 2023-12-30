@@ -4,6 +4,9 @@ body {
     font-family: "Lucida Console", Courier, monospace;
     cursor: crosshair;
 }
+body.darkmode {
+    background: black;
+}
 
 .glow {
     box-shadow: 0px 0px 6px 2px rgba(255,255,255,0.9);
@@ -42,11 +45,12 @@ body {
     bottom: 10%;
     background: white;
     display: none;
+    font-size: 120%;
 }
 #settings .title {
     width: 100%;
     text-align: center;
-    font-size: 150%;
+    font-size: 160%;
     font-weight: bold;
     margin: 1% auto;
 }
@@ -153,18 +157,19 @@ body {
 }
 
 #screen {
-    width: 640px;
-    height: 480px;
     position: relative;
     margin: auto;
     height: 100vh;
     width: calc((4/3)*100vh);
     background-color: black;
     background-size: cover;
+    font-size: calc((4/3)*1.3vh)
 }
 #screen.ratio169 {
     width: calc((16/9)*100vh);
+    font-size: calc((16/9)*1.3vh)
 }
+
 #preview {
     overflow: hidden;
     width: 95%;
